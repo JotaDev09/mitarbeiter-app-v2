@@ -34,9 +34,7 @@ export class HolidaysPage implements OnInit {
   floatContainer: boolean = false;
   infoNextYear: boolean = false;
 
-  constructor(private sharedService: SharedService, private router: Router) {
-    this.sharedService.updateTitle('Urlaubsantrag');
-  }
+  constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit(): void {
     this.habilityNextYearOption();

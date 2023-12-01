@@ -105,9 +105,7 @@ export class ProfilPage implements OnInit {
     { name: 'IKK Südwest' },
   ];
 
-  constructor(private sharedService: SharedService) {
-    this.sharedService.updateTitle('Profil');
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
     this.getInfoFromUser();

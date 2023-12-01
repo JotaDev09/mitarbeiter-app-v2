@@ -14,9 +14,7 @@ export class CalendarPage implements OnInit {
   holidaysData: any[] = [];
   eventsData: any[] = [];
 
-  constructor(private sharedService: SharedService) {
-    this.sharedService.updateTitle('Kalender');
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
     this.loadHolidaysData();

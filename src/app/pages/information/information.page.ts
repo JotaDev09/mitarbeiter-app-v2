@@ -46,9 +46,7 @@ export class InformationPage implements OnInit {
     },
   ];
 
-  constructor(private sharedService: SharedService) {
-    this.sharedService.updateTitle('Information');
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit() {}
 }

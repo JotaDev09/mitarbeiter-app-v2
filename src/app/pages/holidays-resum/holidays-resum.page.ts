@@ -38,9 +38,10 @@ export class HolidaysResumPage implements OnInit {
     { name: 'Storniert', icon: 'assets/icons/status-cancel.png' },
   ];
 
-  constructor(private sharedService: SharedService, private dialog: MatDialog) {
-    this.sharedService.updateTitle('Urlaubs Übersicht');
-  }
+  constructor(
+    private sharedService: SharedService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.getHolidaysFromLocalStorage();

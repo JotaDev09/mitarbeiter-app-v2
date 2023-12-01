@@ -22,10 +22,9 @@ export class DienstplanPage implements OnInit {
   relax: string = 'Ruhetag';
   showFiller = false;
 
-  constructor(private dialog: MatDialog, private sharedService: SharedService) {
+  constructor(private dialog: MatDialog) {
     this.getDate();
     this.isToday('01/01/21');
-    this.sharedService.updateTitle('Dienstplan');
   }
 
   ngOnInit() {}

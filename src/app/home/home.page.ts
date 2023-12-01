@@ -33,7 +33,6 @@ export class HomePage implements OnInit {
 
   constructor(private dialog: MatDialog, private sharedService: SharedService) {
     this.greetings();
-    this.sharedService.updateTitle('Startseite');
     this.licenseDates();
   }
 
@@ -80,7 +79,7 @@ export class HomePage implements OnInit {
               const endDate = new Date(holidays.holidaysTo);
               endDate.setDate(endDate.getDate() + 1);
               const status = holidays.status;
-              if (status === 'approved') {
+              if (status === 'requested') {
                 return this.approved(holidays, endDate);
               } else {
                 return null;
@@ -100,7 +99,9 @@ export class HomePage implements OnInit {
    * @returns the approved holidays
    */
   approved(holidays: any, endDate: Date) {
+    console.log(holidays);
     return {
+      title: 'Urlaub beantragt',
       start: holidays.holidaysFrom,
       end: moment(endDate).format('YYYY-MM-DD'),
       display: 'background',

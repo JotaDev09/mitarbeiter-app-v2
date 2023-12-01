@@ -8,9 +8,7 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class DocumentsPage implements OnInit {
   user: any;
-  constructor(private sharedService: SharedService) {
-    this.sharedService.updateTitle('Dokumente');
-  }
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
     this.user = this.sharedService.getUserLocalStorage();
