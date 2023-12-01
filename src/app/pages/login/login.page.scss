@@ -1,0 +1,228 @@
+body {
+  margin: 0 !important;
+  font-family: "Poppins" !important;
+}
+
+.login-content {
+  font-family: "Poppins" !important;
+}
+/* Container for intro animation */
+.container-intro {
+  position: absolute;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  z-index: 2;
+  img {
+    position: absolute;
+    width: 500px;
+    object-fit: cover;
+  }
+}
+
+/* login container */
+.container-login {
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  position: absolute;
+  z-index: 2;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  gap: 30px;
+}
+
+.login-title {
+  width: 500px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    color: #252525;
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 700;
+    font-family: "Poppins";
+  }
+}
+
+.login-user-email {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login-email-title {
+  span {
+    font-size: 20px;
+    color: #252525;
+  }
+}
+
+mat-icon {
+  color: black !important;
+}
+
+.input-container {
+  padding: 10px;
+  border: #a0d0c0 1px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  input {
+    background-color: white !important;
+    outline: none;
+    width: 250px;
+    border: none;
+    font-family: "Poppins";
+    color: #3c8f69;
+  }
+
+  &:hover {
+    border-color: #3c8f69;
+  }
+}
+
+.icon-view {
+  cursor: pointer;
+}
+
+input:focus + .input-container {
+  border-color: #3c8f69;
+}
+
+.case-false {
+  span {
+    color: red;
+    font-size: 10px;
+    font-family: "Poppins";
+  }
+}
+
+.login-button {
+  button {
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #3c8f69;
+    color: #eef011;
+    transition: opacity 0.3s;
+    font-family: "Poppins";
+    cursor: pointer;
+    border: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.remember-me-cont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .check-remember {
+    &:hover {
+      background-color: none !important;
+    }
+  }
+
+  span {
+    font-size: 16px;
+    color: #3c8f69;
+  }
+}
+
+//check box remember-me styles
+.mat-accent {
+  --mat-option-selected-state-label-text-color: transparent !important;
+}
+
+.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
+    [data-indeterminate="true"]
+  )
+  ~ .mdc-checkbox__background {
+  border-color: #3c8f69 !important;
+}
+
+.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background,
+.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:indeterminate
+  ~ .mdc-checkbox__background,
+.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background {
+  border-color: #3c8f69 !important;
+  background-color: #3c8f69 !important;
+}
+
+.mdc-checkbox:active {
+  background-color: none !important;
+}
+
+.mdc-checkbox
+  .mdc-checkbox__native-control:focus:checked
+  ~ .mdc-checkbox__ripple {
+  background-color: #3c8f69 !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:focus ~ .mdc-checkbox__ripple {
+  background-color: transparent !important;
+}
+
+//copyright container
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  gap: 10px;
+}
+
+.gorris-rechte {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  span {
+    color: black;
+    font-size: 16px;
+  }
+  a {
+    color: black;
+    font-size: 18px;
+  }
+}
+
+.gorris-impressum {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  a {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      color: #3c8f69;
+      text-decoration: underline;
+    }
+  }
+  span {
+    color: black;
+    font-size: 18px;
+  }
+}

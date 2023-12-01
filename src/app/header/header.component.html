@@ -1,0 +1,68 @@
+<!-- <section class="toolbar">
+  <div class="logo-cont">
+    <img src="/assets/img/gorris_logo.png" alt="">
+  </div>
+  <span class="pageTitle">{{pageTitle}}</span>
+  <div class="button-menu">
+    <button mat-button [matMenuTriggerFor]="menu" class="menu-header">Menu</button>
+  </div>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="toHome()"><span class="menu-button">Home</span></button>
+    <button mat-menu-item (click)="toDienst()"><span class="menu-button">Dienstplan</span></button>
+    <button mat-menu-item (click)="toCalendar()"><span class="menu-button">Kalender</span></button>
+    <button mat-menu-item (click)="toHolidays()"><span class="menu-button">Urlaubsantrag</span></button>
+    <button mat-menu-item (click)="toHolidaysResum()"><span class="menu-button">Urlaubs Übersicht</span></button>
+    <button mat-menu-item (click)="toInformation()"><span class="menu-button">Information</span></button>
+    <button mat-menu-item (click)="toProfil()"><span class="menu-button">Profil</span></button>
+    <button mat-menu-item (click)="toDocument()"><span class="menu-button">Dokumente</span></button>
+    <button mat-menu-item class="button-login" (click)="signOut()"><a>Abmelden</a></button>
+  </mat-menu>
+</section> -->
+
+<!-- Zweite Möglichkeit -->
+
+<section class="toolbar">
+  <div class="logo-cont">
+    <img src="/assets/img/gorris_logo.png" alt="">
+  </div>
+
+  <div class="menu-list">
+    <div (click)="toHome()" [class.active]="isActive('/home')">
+      <mat-icon>home</mat-icon>
+      <button class="menu-option"><span>Home</span></button>
+    </div>
+    <div (click)="toDienst()" [class.active]="isActive('/dienstplan')">
+      <mat-icon>calendar_view_week</mat-icon>
+      <button class="menu-option"><span>Dienstplan</span></button>
+    </div>
+    <div (click)="toCalendar()" [class.active]="isActive('/calendar')">
+      <mat-icon>calendar_month</mat-icon>
+      <button class="menu-option"><span>Kalender</span></button>
+    </div>
+    <div (click)="toHolidays()" [class.active]="isActive('/holidays')">
+      <mat-icon>flight</mat-icon>
+      <button class="menu-option"><span>Urlaubsantrag</span></button>
+    </div>
+    <div (click)="toHolidaysResum()" [class.active]="isActive('/holidays-resum')">
+      <mat-icon>playlist_add_check</mat-icon>
+      <button class="menu-option"><span>Urlaubs
+          Übersicht</span></button>
+    </div>
+    <div (click)="toInformation()" [class.active]="isActive('/information')">
+      <mat-icon>info</mat-icon>
+      <button class="menu-option"><span>Information</span></button>
+    </div>
+    <div (click)="toProfil()" [class.active]="isActive('/profil')">
+      <mat-icon>person</mat-icon>
+      <button class="menu-option"><span>Profil</span></button>
+    </div>
+    <div (click)="toDocument()" [class.active]="isActive('/documents')">
+      <mat-icon>folder_open</mat-icon>
+      <button class="menu-option"><span>Dokumente</span></button>
+    </div>
+  </div>
+  <div class="sign-out-button">
+    <button mat-menu-item class="button-login" (click)="signOut()"><a>Abmelden</a></button>
+  </div>
+
+</section>

@@ -1,0 +1,51 @@
+<section class="view-dienst">
+  <div class="closeComponent" (click)="closeViewDienst" (click)="closeViewDienst()">
+    <div></div>
+  </div>
+  <div class="edit-dienst-info" *ngIf="editTag">
+    <p>Bei Bedarf Zeitänderung vom Dienstplaner anfordern.</p>
+  </div>
+
+  <div class="info" [ngClass]="{'today': isToday}" *ngIf="!editTag">
+    <span>{{data.dienstNumber}}</span>
+    <span>{{data.day}}</span>
+    <span>{{data.dienst}}</span>
+    <span>{{data.wagen}}</span>
+    <span>{{data.driver}}</span>
+    <span>{{data.sani}}</span>
+    <!-- <span>{{data.relax}}</span> -->
+  </div>
+
+  <div class="info" [ngClass]="{'today': isToday}" *ngIf="editTag">
+    <div class="info-cont">
+      <span>Aktuell: {{data.day}}</span>
+      <input class="edit-date" type="date" [min]="minDate" [(ngModel)]="selectedDay">
+    </div>
+    <div class="info-cont">
+      <span>Aktuell: {{data.dienst}}</span>
+      <div class="new-dienst-hour">
+        <span>Ab:</span>
+        <select class="edit-time" [(ngModel)]="selectedFromHour">
+          <option *ngFor="let hour of availableHours" [value]="hour">{{ hour }}</option>
+        </select>
+      </div>
+      <div class="new-dienst-hour">
+        <span>Spätesten:</span>
+        <select class="edit-time" [(ngModel)]="selectedmaximalHour">
+          <option *ngFor="let hour of availableHours" [value]="hour">{{ hour }}</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="button-container">
+    <div class="button-edit" (click)="beantragenDienst()" *ngIf="editTag">
+      <a>Beantragen</a>
+    </div>
+
+    <div class="button-edit" (click)="changeDienst(data.day)" *ngIf="!editTag">
+      <a>Dienst wechseln</a>
+    </div>
+  </div>
+</section>

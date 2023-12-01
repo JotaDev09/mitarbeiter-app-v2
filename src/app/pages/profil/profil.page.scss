@@ -1,0 +1,129 @@
+.profil-container {
+  height: -webkit-fill-available;
+  margin-left: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: justify;
+  font-family: "Poppins";
+  background-color: #f0f9f4;
+}
+
+.profil {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 1rem;
+}
+
+.profil-info {
+  border: 1px solid #3c8f69;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: white;
+}
+
+.profil-info-name {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.info-title {
+  font-size: 18px;
+  color: #3c8f69;
+  font-weight: 500;
+}
+
+.info-name {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid #3c8f69;
+  margin-left: 10px;
+  margin-right: 10px a {
+    color: #3c8f69;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: grey;
+    font-family: "Poppins";
+    font-size: 16px;
+  }
+
+  .input-date {
+    width: 120px;
+    color: black;
+    font-size: 16px;
+  }
+}
+
+.edit-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: 22px;
+
+  span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3c8f69;
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+  cursor: pointer;
+}
+
+.select-insurance {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-family: "Poppins";
+  font-size: 16px;
+  option {
+    outline: none;
+    border: none;
+  }
+}
+
+select:focus-visible {
+  outline: none;
+  border: none;
+}
+
+.option-choose {
+  display: flex;
+  width: 200px;
+}
+
+mat-icon {
+  color: #3c8f69;
+}

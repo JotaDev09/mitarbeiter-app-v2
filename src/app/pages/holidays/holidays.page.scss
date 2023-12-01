@@ -1,0 +1,293 @@
+@import "src/global.scss";
+
+.holidays-container {
+  height: -webkit-fill-available;
+  margin-left: 250px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: justify;
+  font-family: "Poppins";
+  background-color: #f0f9f4;
+}
+
+.form-container {
+  border: 1px solid #3c8f69;
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: -webkit-fill-available;
+  height: fit-content;
+  background-color: white;
+  margin: 1rem;
+}
+
+.form-year {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  span {
+    font-size: 35px;
+    font-weight: bold;
+    color: #3c8f69;
+  }
+
+  select {
+    background-color: transparent;
+    border: none;
+    font-size: 35px;
+    font-weight: bold;
+    color: #3c8f69;
+  }
+
+  .option {
+    font-size: 10px;
+  }
+}
+
+.info-container {
+  display: flex;
+  gap: 30px;
+
+  a {
+    color: #3c8f69;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #3c8f69;
+
+  .grey {
+    outline: none;
+    background-color: white;
+    color: grey;
+    font-size: 18px;
+    border: none;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  .green {
+    outline: none;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+    font-family: "Poppins";
+  }
+}
+
+.inputStillHol {
+  width: 25px;
+}
+
+.inputDays {
+  width: 110px;
+}
+
+.info-notizen {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #3c8f69;
+  width: -webkit-fill-available;
+  height: 200px;
+
+  textarea {
+    background-color: transparent;
+    font-family: "Poppins";
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    resize: none;
+    outline: none;
+  }
+}
+
+.self {
+  margin-top: 40px;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.attention {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    font-size: 14px;
+  }
+  a {
+    color: #3c8f69;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.button-holidays {
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 20px;
+  color: #eef011;
+  padding: 12px 17px;
+  background-color: #3c8f69;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  font-family: "Poppins";
+  border: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.float-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 200px;
+  bottom: 200px;
+}
+
+.float-container-holidays {
+  width: 250px;
+  align-self: center;
+  font-size: 23px;
+  color: #eef011;
+  padding: 20px 20px;
+  background-color: #3c8f69;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.infoNextYear {
+  margin: 1rem;
+  span {
+    font-size: 18px;
+
+    a {
+      color: #3c8f69;
+      font-size: 20px;
+    }
+  }
+}
+
+.example-form-field {
+  padding: 0px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+.mdc-text-field--filled {
+  --mdc-filled-text-field-active-indicator-height: 0px !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent !important;
+}
+
+.primary {
+  background-color: #3c8f69 !important;
+  color: white !important;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: #3c8f69 !important;
+}
+
+.mat-calendar-body-selected {
+  background-color: #3c8f69 !important;
+}
+
+.mat-calendar-body-in-range::before {
+  background: #dcefe3 !important;
+}
+
+.mat-calendar-body-cell-content.mat-focus-indicator {
+  &:hover {
+    background-color: #dcefe3 !important;
+  }
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(
+    .mat-calendar-body-comparison-identical
+  ) {
+  border-color: #3c8f69 !important;
+}
+
+.mat-calendar-body-cell::before,
+.mat-calendar-body-cell::after,
+.mat-calendar-body-cell-preview {
+  &:hover {
+    background-color: #dcefe3 !important;
+  }
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+  > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(
+    .mat-calendar-body-comparison-identical
+  ) {
+  background-color: #dcefe3 !important;
+}
+
+@media (width < 1500px) {
+  .holidays-container {
+    padding: 80px 100px 25px 100px;
+  }
+
+  .form-container {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .form-year {
+    margin-bottom: 0px;
+  }
+
+  .info-notizen {
+    height: 150px;
+  }
+
+  .info-container {
+    gap: 10px;
+  }
+
+  .self {
+    margin-top: 10px;
+  }
+}

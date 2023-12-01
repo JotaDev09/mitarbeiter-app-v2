@@ -1,0 +1,146 @@
+p {
+  color: black;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 30px !important;
+}
+
+.edit-dienst-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3c8f69;
+  }
+}
+
+.view-dienst {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.closeComponent {
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: flex-end;
+  div {
+    background-image: url("/assets/icons/close.svg");
+    background-size: cover;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    &:hover {
+      background-color: #eef011;
+      transition: 0.5s;
+      border-radius: 20px;
+      padding: 10px;
+      opacity: 1;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: justify;
+  font-family: "Poppins";
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  color: black;
+  border-radius: 20px;
+  border: 1px solid #3c8f69;
+  span {
+    font-size: 30px;
+  }
+}
+
+.edit-date {
+  background-color: #3c8f69;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+
+.edit-time {
+  background-color: #3c8f69;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}
+
+.today {
+  border: 2px solid #eef011;
+  background-color: #3c8f69;
+  color: #eef011 !important;
+  font-weight: 600px;
+
+  input {
+    font-size: 20px;
+    border: 1px solid #eef011;
+    background-color: #3c8f69;
+  }
+  select {
+    font-size: 20px;
+    border: 1px solid #eef011;
+    background-color: #3c8f69;
+  }
+}
+
+.info-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  span {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-edit {
+  padding: 10px 15px;
+  background-color: #3c8f69;
+  border: 2px solid #eef011;
+  border-radius: 10px;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #eef011;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.new-dienst-hour {
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
