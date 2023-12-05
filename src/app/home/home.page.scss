@@ -70,6 +70,7 @@ a {
   }
 }
 
+//Calendar Size
 .fc-theme-standard td,
 .fc-theme-standard th {
   height: 20px;
@@ -84,6 +85,7 @@ a {
 .fc-col-header {
   width: 240px !important;
 }
+//
 
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
   min-height: 0;
@@ -168,5 +170,71 @@ a {
   span {
     font-size: 18px;
     color: #bbdfc9;
+  }
+}
+
+@media (width < 1500px) {
+  .home-container {
+    padding-top: 30px;
+    gap: 0;
+  }
+
+  .container-head {
+    display: flex;
+    flex-direction: initial;
+    margin: 1rem;
+    gap: 50px;
+  }
+
+  .wrapper-calendar {
+    width: 270px !important;
+    height: 360px !important;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.3em;
+  }
+
+  .fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1em;
+  }
+
+  .today-title {
+    a {
+      font-size: 1.2em;
+    }
+
+    span {
+      font-size: 17px;
+    }
+  }
+  .car-license {
+    a {
+      font-size: 1.2em;
+    }
+
+    span {
+      font-size: 17px;
+    }
+  }
+
+  //Calendar Size
+  .fc-col-header {
+    width: 215px !important;
+  }
+
+  .fc .fc-scrollgrid-section-body table,
+  .fc .fc-scrollgrid-section-footer table {
+    width: 215px !important;
+    height: 230px !important;
+  }
+
+  //
+  .post-title a {
+    font-size: 1.3em;
+  }
+
+  .post-alert span {
+    font-size: 16px;
   }
 }

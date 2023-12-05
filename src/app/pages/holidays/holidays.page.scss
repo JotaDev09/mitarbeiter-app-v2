@@ -271,12 +271,13 @@
 
 @media (width < 1500px) {
   .holidays-container {
-    padding: 80px 100px 25px 100px;
+    padding-top: 30px;
+    gap: 0;
   }
 
   .form-container {
     padding: 20px;
-    gap: 15px;
+    gap: 10px;
   }
 
   .form-year {
@@ -284,7 +285,7 @@
   }
 
   .info-notizen {
-    height: 150px;
+    height: 140px;
   }
 
   .info-container {
@@ -292,6 +293,10 @@
   }
 
   .self {
-    margin-top: 10px;
+    margin-top: 0px;
+  }
+
+  .attention {
+    gap: 5px;
   }
 }

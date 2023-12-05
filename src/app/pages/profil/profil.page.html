@@ -83,6 +83,59 @@
     </div>
 
     <div class="profil-info" *ngFor="let info of user">
+      <div class="profil-info-name" *ngIf="!editBankInfo">
+        <div class="info-head">
+          <div class="info-title">
+            <span>Bankverbindung</span>
+          </div>
+          <div class="edit-cont" (click)="editBankUser()">
+            <mat-icon>edit</mat-icon>
+          </div>
+        </div>
+        <div class="info-name">
+          <a>Kontoinhaber:</a>
+          <span>{{info?.bankOwner}}</span>
+        </div>
+        <div class="info-name">
+          <a>IBAN:</a>
+          <span>{{info?.bankNumber}}</span>
+        </div>
+        <div class="info-name">
+          <a>BIC:</a>
+          <span>{{info?.bankBic}}</span>
+        </div>
+      </div>
+
+      <form #bankForm="ngForm" (ngSubmit)="saveBank(bankForm)" *ngIf="editBankInfo">
+        <div class="profil-info-name">
+          <div class="info-head">
+            <div class="info-title">
+              <span>Bankverbindung</span>
+            </div>
+            <button class="edit-cont" type="submit">
+              <mat-icon>send</mat-icon>
+            </button>
+          </div>
+          <div class="info-name">
+            <a>Kontoinhaber:</a>
+            <input placeholder="{{info?.bankOwner}}" [(ngModel)]="userBankOwner" type="name" name="userInsuranceName"
+              class="">
+          </div>
+          <div class="info-name">
+            <a>IBAN:</a>
+            <input placeholder="{{info?.bankNumber}}" [(ngModel)]="userBankNumber" type="string"
+              name="userInsuranceNumber" class="">
+          </div>
+          <div class="info-name">
+            <a>BIC:</a>
+            <input placeholder="{{info?.bankBic}}" [(ngModel)]="userBankBic" type="string" name="userInsuranceNumber"
+              class="">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="profil-info" *ngFor="let info of user">
       <div class="profil-info-name" *ngIf="!editLicensesInfo">
         <div class="info-head">
           <div class="info-title">
@@ -173,57 +226,6 @@
       </form>
     </div>
 
-    <div class="profil-info" *ngFor="let info of user">
-      <div class="profil-info-name" *ngIf="!editBankInfo">
-        <div class="info-head">
-          <div class="info-title">
-            <span>Bankverbindung</span>
-          </div>
-          <div class="edit-cont" (click)="editBankUser()">
-            <mat-icon>edit</mat-icon>
-          </div>
-        </div>
-        <div class="info-name">
-          <a>Kontoinhaber:</a>
-          <span>{{info?.bankOwner}}</span>
-        </div>
-        <div class="info-name">
-          <a>IBAN:</a>
-          <span>{{info?.bankNumber}}</span>
-        </div>
-        <div class="info-name">
-          <a>BIC:</a>
-          <span>{{info?.bankBic}}</span>
-        </div>
-      </div>
 
-      <form #bankForm="ngForm" (ngSubmit)="saveBank(bankForm)" *ngIf="editBankInfo">
-        <div class="profil-info-name">
-          <div class="info-head">
-            <div class="info-title">
-              <span>Bankverbindung</span>
-            </div>
-            <button class="edit-cont" type="submit">
-              <mat-icon>send</mat-icon>
-            </button>
-          </div>
-          <div class="info-name">
-            <a>Kontoinhaber:</a>
-            <input placeholder="{{info?.bankOwner}}" [(ngModel)]="userBankOwner" type="name" name="userInsuranceName"
-              class="">
-          </div>
-          <div class="info-name">
-            <a>IBAN:</a>
-            <input placeholder="{{info?.bankNumber}}" [(ngModel)]="userBankNumber" type="string"
-              name="userInsuranceNumber" class="">
-          </div>
-          <div class="info-name">
-            <a>BIC:</a>
-            <input placeholder="{{info?.bankBic}}" [(ngModel)]="userBankBic" type="string" name="userInsuranceNumber"
-              class="">
-          </div>
-        </div>
-      </form>
-    </div>
   </div>
 </section>

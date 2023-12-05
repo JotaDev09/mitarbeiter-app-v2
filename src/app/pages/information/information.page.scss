@@ -97,12 +97,60 @@
 
 @media (width < 1500px) {
   .information-container {
-    padding: 100px 100px 50px 100px;
+    padding-top: 30px;
+    gap: 0;
+  }
+
+  .mat-expansion-panel-body {
+    padding: 15px !important;
+  }
+
+  .size-17 {
+    font-size: 15px;
+  }
+
+  .style-atb {
+    font-size: 18px;
+  }
+
+  .style-adg {
+    font-size: 18px;
+  }
+
+  .style-gorris {
+    font-size: 18px;
+    color: #3c8f69;
+  }
+
+  .cont-date {
+    font-size: 15px;
+    margin: 0.2rem;
+  }
+
+  .where {
+    font-size: 15px;
+    margin: 0.2rem;
+  }
+
+  .time {
+    margin: 0.2rem;
+  }
+
+  .date {
+    margin: 0.2rem;
+  }
+
+  .subText {
+    margin: 0.2rem;
+  }
+
+  .finish {
+    margin: 0.2rem;
   }
 
   .foto-container {
     img {
-      width: 280px;
+      width: 240px;
     }
   }
 }
