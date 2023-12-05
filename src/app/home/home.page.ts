@@ -40,6 +40,64 @@ export class HomePage implements OnInit {
     this.loadHolidaysData();
   }
 
+  /**
+   * The function loadHolidaysData() is a function that gets the holidays from the local storage
+   */
+  loadHolidaysData() {
+    this.holidaysData = this.sharedService.getHolidaysFromLocalStorage();
+    if (this.holidaysData && this.holidaysData.length > 0) {
+      this.eventsData = [];
+      for (let i = 0; i < this.holidaysData.length; i++) {
+        const userHolidays = this.holidaysData[i].holidays;
+        this.eventsData = this.eventsData.concat(
+          userHolidays
+            .map((holidays: any) => {
+              const endDate = new Date(holidays.holidaysTo);
+              const startDate = new Date(holidays.holidaysFrom);
+              endDate.setDate(endDate.getDate() + 1);
+              const status = holidays.status;
+              if (status === 'requested') {
+                return this.approved(holidays, endDate, startDate);
+              } else {
+                return null;
+              }
+            })
+            .filter((event: any) => event !== null)
+        );
+      }
+      this.initializeCalendar();
+    }
+  }
+
+  /**
+   * The function approved() is a function that returns the approved holidays
+   * @param holidays the data of the holidays
+   * @param endDate the end date of the holidays
+   * @returns the approved holidays
+   */
+  approved(holidays: any, endDate: Date, startDate: Date) {
+    console.log(holidays);
+    return {
+      start: moment(startDate).format('YYYY-MM-DD'),
+      end: moment(endDate).format('YYYY-MM-DD'),
+      display: 'background',
+      backgroundColor: '#8dc8aa',
+    };
+  }
+
+  /**
+   * The function initializeCalendar() is a function that initialize the calendar with the events
+   */
+  initializeCalendar() {
+    console.log('Events Data:', this.eventsData);
+
+    this.calendarOptions.eventSources = [
+      (fetchInfo, successCallback) => {
+        successCallback(this.eventsData);
+      },
+    ];
+  }
+
   calendarOptions: CalendarOptions = {
     locale: 'de',
     plugins: [dayGridPlugin],
@@ -63,62 +121,6 @@ export class HomePage implements OnInit {
       },
     ],
   };
-
-  /**
-   * The function loadHolidaysData() is a function that gets the holidays from the local storage
-   */
-  loadHolidaysData() {
-    this.holidaysData = this.sharedService.getHolidaysFromLocalStorage();
-    if (this.holidaysData && this.holidaysData.length > 0) {
-      this.eventsData = [];
-      for (let i = 0; i < this.holidaysData.length; i++) {
-        const userHolidays = this.holidaysData[i].holidays;
-        this.eventsData = this.eventsData.concat(
-          userHolidays
-            .map((holidays: any) => {
-              const endDate = new Date(holidays.holidaysTo);
-              endDate.setDate(endDate.getDate() + 1);
-              const status = holidays.status;
-              if (status === 'requested') {
-                return this.approved(holidays, endDate);
-              } else {
-                return null;
-              }
-            })
-            .filter((event: any) => event !== null)
-        );
-      }
-      this.initializeCalendar();
-    }
-  }
-
-  /**
-   * The function approved() is a function that returns the approved holidays
-   * @param holidays the data of the holidays
-   * @param endDate the end date of the holidays
-   * @returns the approved holidays
-   */
-  approved(holidays: any, endDate: Date) {
-    console.log(holidays);
-    return {
-      title: 'Urlaub beantragt',
-      start: holidays.holidaysFrom,
-      end: moment(endDate).format('YYYY-MM-DD'),
-      display: 'background',
-      backgroundColor: '#8dc8aa',
-    };
-  }
-
-  /**
-   * The function initializeCalendar() is a function that initialize the calendar with the events
-   */
-  initializeCalendar() {
-    this.calendarOptions.eventSources = [
-      (fetchInfo, successCallback) => {
-        successCallback(this.eventsData);
-      },
-    ];
-  }
 
   /**
    * The function is used to gets the datum of the ambulance license

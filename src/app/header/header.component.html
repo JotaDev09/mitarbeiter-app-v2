@@ -52,13 +52,13 @@
       <mat-icon>info</mat-icon>
       <button class="menu-option"><span>Information</span></button>
     </div>
-    <div (click)="toProfil()" [class.active]="isActive('/profil')">
-      <mat-icon>person</mat-icon>
-      <button class="menu-option"><span>Profil</span></button>
-    </div>
     <div (click)="toDocument()" [class.active]="isActive('/documents')">
       <mat-icon>folder_open</mat-icon>
       <button class="menu-option"><span>Dokumente</span></button>
+    </div>
+    <div (click)="toProfil()" [class.active]="isActive('/profil')">
+      <mat-icon>person</mat-icon>
+      <button class="menu-option"><span>Profil</span></button>
     </div>
   </div>
   <div class="sign-out-button">
