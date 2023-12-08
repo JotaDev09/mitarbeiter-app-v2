@@ -3,7 +3,7 @@
   margin-left: 250px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 100px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -109,7 +109,6 @@
 
 @media (width < 1500px) {
   .calendar-container {
-    padding-top: 30px;
     gap: 0;
   }
 

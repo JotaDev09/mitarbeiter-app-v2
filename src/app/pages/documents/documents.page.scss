@@ -7,7 +7,7 @@ body {
   margin-left: 250px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 100px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -93,7 +93,6 @@ input[type="file"] {
 
 @media (width < 1500px) {
   .documents-container {
-    padding-top: 30px;
     gap: 0;
   }
 }

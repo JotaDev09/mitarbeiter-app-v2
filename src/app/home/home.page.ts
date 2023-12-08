@@ -6,6 +6,7 @@ import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import * as moment from 'moment';
 import 'moment/locale/de';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,8 +31,14 @@ export class HomePage implements OnInit {
   isAmbulanceLicenseExpirationThreeMonths: boolean = false;
   holidaysData: any[] = [];
   eventsData: any[] = [];
+  instructions: string = '';
+  driveLicenseAlmostExpired: boolean = false;
 
-  constructor(private dialog: MatDialog, private sharedService: SharedService) {
+  constructor(
+    private dialog: MatDialog,
+    private sharedService: SharedService,
+    private router: Router
+  ) {
     this.greetings();
     this.licenseDates();
   }
@@ -190,6 +197,8 @@ export class HomePage implements OnInit {
       }
 
       this.changeColorAdvice(today, carLicenseDate, ambulanceLicenseDate);
+      this.driveLicenseAlmostExpired = true;
+      this.instructions = 'Was machen?';
     }
   }
 
@@ -218,6 +227,13 @@ export class HomePage implements OnInit {
       ambulanceLicenseDate.isBefore(fourMonthsLater);
     this.isAmbulanceLicenseExpirationThreeMonths =
       ambulanceLicenseDate.isBetween(fourMonthsLater, sixMonthsLater);
+  }
+
+  /**
+   * The function is used to navigate to the instructions page
+   */
+  instructionsRenovate() {
+    this.router.navigate(['/information']);
   }
 
   /**

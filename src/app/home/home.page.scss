@@ -3,7 +3,7 @@
   margin-left: 250px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 100px;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -173,9 +173,37 @@ a {
   }
 }
 
+.datum-license {
+  display: flex;
+  gap: 30px;
+}
+
+.help-renovate {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+
+  mat-icon {
+    color: white;
+  }
+
+  a {
+    font-size: 12px;
+  }
+
+  &:hover {
+    mat-icon {
+      color: rgb(175, 172, 172);
+    }
+    a {
+      color: rgb(175, 172, 172);
+    }
+  }
+}
+
 @media (width < 1500px) {
   .home-container {
-    padding-top: 30px;
     gap: 0;
   }
 
