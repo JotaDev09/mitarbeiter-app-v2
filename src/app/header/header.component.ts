@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -13,11 +12,7 @@ export class HeaderComponent implements OnInit {
   pageTitle = '';
   currentRoute: string = '';
 
-  constructor(
-    private router: Router,
-    private dialog: MatDialog,
-    private sharedService: SharedService
-  ) {
+  constructor(private router: Router, private sharedService: SharedService) {
     this.sharedService.pageTitle$.subscribe((title) => {
       this.pageTitle = title;
     });
