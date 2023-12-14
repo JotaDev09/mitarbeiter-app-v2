@@ -8,8 +8,9 @@ import { HeaderModule } from 'src/app/header/header.module';
 import { HomeComponent } from 'src/app/home/home.component';
 import { ServiceScheduleComponent } from './pages/service-schedule/service-schedule.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
-import { HolidaysComponent } from './pages/holidays/holidays.component';
+import { HolidaysRequestComponent } from './pages/holidays-request/holidays-request.component';
 import { HolidaysResumComponent } from './pages/holidays-resum/holidays-resum.component';
+import { WorkshopRequestComponent } from './pages/workshop-request/workshop-request.component';
 import { InformationComponent } from 'src/app/pages/information/information.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { ProfilComponent } from './pages/profil/profil.component';
@@ -49,8 +50,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ServiceScheduleComponent,
     CalendarComponent,
-    HolidaysComponent,
+    HolidaysRequestComponent,
     HolidaysResumComponent,
+    WorkshopRequestComponent,
     InformationComponent,
     DocumentsComponent,
     ProfilComponent,

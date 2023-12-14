@@ -204,4 +204,25 @@ export class SharedService {
     }
     return false;
   }
+
+  /**
+   * the function saveReparaturLocalStorage() is a function that saves the reparatur in the local storage
+   * @param reaparaturData the reaparatur data to be saved
+   */
+  saveReparaturLocalStorage(reaparaturData: any) {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    user.reparatur = user.reparatur || [];
+    user.reparatur.push(reaparaturData);
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  /**
+   * The function set the text in capital letter
+   */
+  capitalizeFirstLetter(text: string): string {
+    if (text.length === 0) {
+      return text;
+    }
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
 }

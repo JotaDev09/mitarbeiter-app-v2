@@ -43,25 +43,31 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
+   * The function is used to navigate to the calendar page
+   */
+  toCalendar() {
+    this.router.navigate(['/Kalender']);
+  }
+
+  /**
    * The function is used to navigate to the holidays page
    */
   toHolidays() {
-    this.router.navigate(['/holidays']);
+    this.router.navigate(['/urlaubsantrag']);
   }
 
   /**
    * The function is used to navigate to the holidays page
    */
   toHolidaysResum() {
-    this.router.navigate(['/holidays-resum']);
+    this.router.navigate(['/urlaubsuebersicht']);
   }
 
   /**
-   * The function is used to sign out the user and redirect to login page
+   * The function is used to navigate to the workshop page
    */
-  signOut() {
-    //implement sign out functionality here
-    this.router.navigate(['/login']);
+  toWorkShopRequest() {
+    this.router.navigate(['/werkstattanfrage']);
   }
 
   /**
@@ -72,10 +78,10 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
-   * The function is used to navigate to the calendar page
+   * The function is used to navigate to the documents page
    */
-  toCalendar() {
-    this.router.navigate(['/calendar']);
+  toDocument() {
+    this.router.navigate(['/dokumente']);
   }
 
   /**
@@ -86,9 +92,10 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
-   * The function is used to navigate to the documents page
+   * The function is used to sign out the user and redirect to login page
    */
-  toDocument() {
-    this.router.navigate(['/documents']);
+  signOut() {
+    //implement sign out functionality here
+    this.router.navigate(['/login']);
   }
 }

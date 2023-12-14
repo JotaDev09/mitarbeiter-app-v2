@@ -22,4 +22,5 @@ export interface User {
   bankOwner: string;
   bankNumber: string;
   bankBic: string;
+  reparatur: [];
 }

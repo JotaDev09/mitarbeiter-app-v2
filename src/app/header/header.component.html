@@ -12,24 +12,28 @@
       <mat-icon>calendar_view_week</mat-icon>
       <button class="menu-option"><span>Dienstplan</span></button>
     </div>
-    <div (click)="toCalendar()" [class.active]="isActive('/calendar')">
+    <div (click)="toCalendar()" [class.active]="isActive('/Kalender')">
       <mat-icon>calendar_month</mat-icon>
       <button class="menu-option"><span>Kalender</span></button>
     </div>
-    <div (click)="toHolidays()" [class.active]="isActive('/holidays')">
+    <div (click)="toHolidays()" [class.active]="isActive('/urlaubsantrag')">
       <mat-icon>flight</mat-icon>
       <button class="menu-option"><span>Urlaubsantrag</span></button>
     </div>
-    <div (click)="toHolidaysResum()" [class.active]="isActive('/holidays-resum')">
+    <div (click)="toHolidaysResum()" [class.active]="isActive('/urlaubsuebersicht')">
       <mat-icon>playlist_add_check</mat-icon>
       <button class="menu-option"><span>Urlaubs
           Übersicht</span></button>
+    </div>
+    <div (click)="toWorkShopRequest()" [class.active]="isActive('/werkstattanfrage')">
+      <mat-icon>build</mat-icon>
+      <button class="menu-option"><span>Reparaturauftrag</span></button>
     </div>
     <div (click)="toInformation()" [class.active]="isActive('/information')">
       <mat-icon>info</mat-icon>
       <button class="menu-option"><span>Information</span></button>
     </div>
-    <div (click)="toDocument()" [class.active]="isActive('/documents')">
+    <div (click)="toDocument()" [class.active]="isActive('/dokumente')">
       <mat-icon>folder_open</mat-icon>
       <button class="menu-option"><span>Dokumente</span></button>
     </div>

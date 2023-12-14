@@ -7,10 +7,11 @@ import { InformationComponent } from './pages/information/information.component'
 import { ImpressumComponent } from './pages/impressum/impressum.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { HolidaysResumComponent } from './pages/holidays-resum/holidays-resum.component';
-import { HolidaysComponent } from './pages/holidays/holidays.component';
+import { HolidaysRequestComponent } from './pages/holidays-request/holidays-request.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { ServiceScheduleComponent } from './pages/service-schedule/service-schedule.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { WorkshopRequestComponent } from './pages/workshop-request/workshop-request.component';
 
 const routes: Routes = [
   {
@@ -35,19 +36,23 @@ const routes: Routes = [
     component: PrivacyComponent,
   },
   {
-    path: 'holidays',
-    component: HolidaysComponent,
+    path: 'urlaubsantrag',
+    component: HolidaysRequestComponent,
   },
   {
-    path: 'holidays-resum',
+    path: 'urlaubsuebersicht',
     component: HolidaysResumComponent,
+  },
+  {
+    path: 'werkstattanfrage',
+    component: WorkshopRequestComponent,
   },
   {
     path: 'information',
     component: InformationComponent,
   },
   {
-    path: 'calendar',
+    path: 'Kalender',
     component: CalendarComponent,
   },
   {
@@ -55,7 +60,7 @@ const routes: Routes = [
     component: ProfilComponent,
   },
   {
-    path: 'documents',
+    path: 'dokumente',
     component: DocumentsComponent,
   },
   {
