@@ -114,11 +114,26 @@ export class ProfilComponent implements OnInit {
   /**
    * The function getInfoFromUser() is a function that gets the user info from the local storage
    */
-  async getInfoFromUser() {
+  getInfoFromUser() {
     try {
-      const userData = await this.sharedService.getUserLocalStorage();
+      const userData = localStorage.getItem('user');
+      console.log('UserData from Local Storage:', userData);
+
       if (userData) {
-        this.user = Array.isArray(userData) ? userData : [userData];
+        // Parseamos los datos y aseguramos que datesLicenses está definido
+        const parsedData = JSON.parse(userData) as User;
+        parsedData.datesLicenses = parsedData.datesLicenses || {};
+        parsedData.datesLicenses.driverLicense =
+          parsedData.datesLicenses.driverLicense || '';
+        console.log('Driver License:', parsedData.datesLicenses.driverLicense);
+        parsedData.datesLicenses.ambulanceLicense =
+          parsedData.datesLicenses.ambulanceLicense || '';
+        console.log(
+          'Ambulance License:',
+          parsedData.datesLicenses.ambulanceLicense
+        );
+
+        this.user = [parsedData];
       }
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -157,9 +172,9 @@ export class ProfilComponent implements OnInit {
    * The function saveInfo() is a function that saves the new user info in the local storage
    * @param form NgForm
    */
-  saveInfo(form: NgForm) {
-    if (form.valid) {
-      const worker = {
+  savePrivateDaten(privateDatenForm: any) {
+    if (privateDatenForm.valid) {
+      const privateDaten = {
         name: this.userName,
         lastname: this.userLastname,
         phone: this.userPhone,
@@ -167,7 +182,7 @@ export class ProfilComponent implements OnInit {
         address: this.userAddress,
         stadt: this.userStadt,
       };
-      this.sharedService.updateInfoLocalStorage(worker);
+      this.sharedService.savePrivateDatenLS(privateDaten);
       this.editInfo = false;
       this.getInfoFromUser();
     }
@@ -177,13 +192,13 @@ export class ProfilComponent implements OnInit {
    * The function saveLicenses() is a function that saves the new user his licenses in the local storage
    * @param form NgForm
    */
-  saveLicenses(form: NgForm) {
-    if (form.valid) {
-      const worker = {
+  saveLicenses(licensesForm: any) {
+    if (licensesForm.valid) {
+      const datesLicensesData = {
         driverLicense: this.userDriverLicense,
         ambulanceLicense: this.userAmbulanceLicense,
       };
-      this.sharedService.updateInfoLocalStorage(worker);
+      this.sharedService.saveLicensesLS(datesLicensesData);
       this.editLicensesInfo = false;
       this.getInfoFromUser();
     }

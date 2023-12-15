@@ -8,7 +8,7 @@
   </div>
 
   <div class="profil">
-    <div class="profil-info" *ngFor="let info of user">
+    <div class="profil-info">
       <div class="profil-info-name" *ngIf="!editInfo">
         <div class="info-head">
           <div class="info-title">
@@ -20,31 +20,31 @@
         </div>
         <div class="info-name">
           <a>Name:</a>
-          <span>{{info?.name}}</span>
+          <span>{{user[0].privateDaten.name}}</span>
         </div>
         <div class="info-name">
           <a>Nachname:</a>
-          <span>{{info?.lastname}}</span>
+          <span>{{user[0].privateDaten.lastname}}</span>
         </div>
         <div class="info-name">
           <a>Adresse:</a>
-          <span>{{info?.address}}</span>
+          <span>{{user[0].privateDaten.address}}</span>
         </div>
         <div class="info-name">
           <a>Pz, Stadt:</a>
-          <span>{{info?.stadt}}</span>
+          <span>{{user[0].privateDaten.stadt}}</span>
         </div>
         <div class="info-name">
           <a>Email:</a>
-          <span>{{info?.email}}</span>
+          <span>{{user[0].privateDaten.email}}</span>
         </div>
         <div class="info-name">
           <a>Handynummer:</a>
-          <span>{{info?.phone}}</span>
+          <span>{{user[0].privateDaten.phone}}</span>
         </div>
       </div>
 
-      <form #infoForm="ngForm" (ngSubmit)="saveInfo(infoForm)" *ngIf="editInfo">
+      <form #privateDatenForm="ngForm" (ngSubmit)="savePrivateDaten(privateDatenForm)" *ngIf="editInfo">
         <div class="profil-info-name">
           <div class="info-head">
             <div class="info-title">
@@ -56,27 +56,29 @@
           </div>
           <div class="info-name">
             <a>Name:</a>
-            <input placeholder="{{info?.name}}" [(ngModel)]="userName" type="name" name="userName">
+            <input placeholder="{{user[0].privateDaten.name}}" [(ngModel)]="userName" type="name" name="userName">
           </div>
           <div class="info-name">
             <a>Nachname:</a>
-            <input placeholder="{{info?.lastname}}" [(ngModel)]="userLastname" type="lastname" name="userLastname">
+            <input placeholder="{{user[0].privateDaten.lastname}}" [(ngModel)]="userLastname" type="lastname"
+              name="userLastname">
           </div>
           <div class="info-name">
             <a>Adresse:</a>
-            <input placeholder="{{info?.address}}" [(ngModel)]="userAddress" type="address" name="userAddress">
+            <input placeholder="{{user[0].privateDaten.address}}" [(ngModel)]="userAddress" type="address"
+              name="userAddress">
           </div>
           <div class="info-name">
             <a>Pz, Stadt:</a>
-            <input placeholder="{{info?.stadt}}" [(ngModel)]="userStadt" type="stadt" name="userStadt">
+            <input placeholder="{{user[0].privateDaten.stadt}}" [(ngModel)]="userStadt" type="stadt" name="userStadt">
           </div>
           <div class="info-name">
             <a>Email:</a>
-            <input placeholder="{{info?.email}}" [(ngModel)]="userEmail" type="email" name="userEmail">
+            <input placeholder="{{user[0].privateDaten.email}}" [(ngModel)]="userEmail" type="email" name="userEmail">
           </div>
           <div class="info-name">
             <a>Handynummer:</a>
-            <input placeholder="{{info?.phone}}" [(ngModel)]="userPhone" type="phone" name="userPhone">
+            <input placeholder="{{user[0].privateDaten.phone}}" [(ngModel)]="userPhone" type="phone" name="userPhone">
           </div>
         </div>
       </form>
@@ -135,7 +137,7 @@
       </form>
     </div>
 
-    <div class="profil-info" *ngFor="let info of user">
+    <div class="profil-info">
       <div class="profil-info-name" *ngIf="!editLicensesInfo">
         <div class="info-head">
           <div class="info-title">
@@ -147,11 +149,15 @@
         </div>
         <div class="info-name">
           <a>Führerschein Ablaufdatum:</a>
-          <span>{{formatDate(info?.driverLicense)}}</span>
+          <span>
+            {{formatDate(user[0].datesLicenses.driverLicense)}}
+          </span>
         </div>
         <div class="info-name">
           <a>P-Schein Ablaufdatum:</a>
-          <span>{{formatDate(info?.ambulanceLicense)}}</span>
+          <span>
+            {{formatDate(user[0].datesLicenses.ambulanceLicense) }}
+          </span>
         </div>
       </div>
 
@@ -167,13 +173,13 @@
           </div>
           <div class="info-name">
             <a>Führerschein Ablaufdatum:</a>
-            <input placeholder="{{info?.driverLicense}}" [(ngModel)]="userDriverLicense" type="date"
+            <input placeholder="{{user[0].datesLicenses.driverLicense}}" [(ngModel)]="userDriverLicense" type="date"
               name="userDriverLicense" class="input-date">
           </div>
           <div class="info-name">
             <a>P-Schein Ablaufdatum:</a>
-            <input placeholder="{{info?.ambulanceLicense}}" [(ngModel)]="userAmbulanceLicense" type="date"
-              name="userAmbulanceLicense" class="input-date">
+            <input placeholder="{{user[0].datesLicenses.ambulanceLicense}}" [(ngModel)]="userAmbulanceLicense"
+              type="date" name="userAmbulanceLicense" class="input-date">
           </div>
         </div>
       </form>

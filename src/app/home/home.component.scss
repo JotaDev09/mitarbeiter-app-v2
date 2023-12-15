@@ -101,7 +101,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: linear-gradient(#8dc8aa, #225a43);
 
   a {
     font-size: 1.75em;
@@ -114,6 +113,14 @@ a {
   }
 }
 
+.green-gradient-dark {
+  background: linear-gradient(#8dc8aa, #225a43);
+}
+
+.green-gradient-light {
+  background: linear-gradient(#8dc8aa, #1d4837);
+}
+
 .driver-license {
   display: flex;
   flex-direction: column;
@@ -123,7 +130,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: linear-gradient(#8dc8aa, #225a43);
   a {
     font-size: 1.75em;
     color: white;

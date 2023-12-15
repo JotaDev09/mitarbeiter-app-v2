@@ -20,18 +20,18 @@
       </full-calendar>
 
       <div class="dienst-today">
-        <div class="today-title container">
+        <div class="today-title container green-gradient-dark ">
           <a>Dienst heute {{today}}</a>
           <span>06:00-14:00</span>
         </div>
-        <div class="today-title container">
+        <div class="today-title container green-gradient-light">
           <a>Dienst morgen {{tomorrow}}</a>
           <span>06:00-14:00</span>
         </div>
       </div>
 
       <div class="driver-license ">
-        <div class="car-license container" *ngIf="noCarLicense"
+        <div class="car-license container green-gradient-dark " *ngIf="noCarLicense"
           [ngClass]="{'expiration-one-month': isCarLicenseExpirationOneMonth, 'expiration-three-months': isCarLicenseExpirationThreeMonths}">
           <a>Führerschein Ablaufsdatum</a>
           <div class="datum-license">
@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-        <div class="car-license container" *ngIf="noAmbulanceLicense"
+        <div class="car-license container green-gradient-dark " *ngIf="noAmbulanceLicense"
           [ngClass]="{'expiration-one-month': isAmbulanceLicenseExpirationOneMonth, 'expiration-three-months': isAmbulanceLicenseExpirationThreeMonths}">
           <a>P-Schein Ablaufsdatum</a>
           <div class="datum-license">

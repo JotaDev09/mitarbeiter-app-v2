@@ -178,22 +178,38 @@ export class HomeComponent implements OnInit {
     const userData = this.sharedService.getUserLocalStorage();
     moment.locale('de');
 
-    if (userData) {
+    if (userData && userData.datesLicenses) {
       const today = moment();
-      const carLicenseDate = moment(userData.driverLicense);
-      const ambulanceLicenseDate = moment(userData.ambulanceLicense);
 
-      this.driverLicense = carLicenseDate.format('LL');
-      if (this.driverLicense === 'Invalid date') {
+      if (userData.datesLicenses.driverLicense) {
+        const carLicenseDate = moment(userData.datesLicenses.driverLicense);
+        this.driverLicense = carLicenseDate.format('LL');
+
+        if (this.driverLicense === 'Invalid date') {
+          this.noCarLicense = false;
+        }
+      } else {
         this.noCarLicense = false;
       }
 
-      this.ambulanceLicense = ambulanceLicenseDate.format('LL');
-      if (this.ambulanceLicense === 'Invalid date') {
+      if (userData.datesLicenses.ambulanceLicense) {
+        const ambulanceLicenseDate = moment(
+          userData.datesLicenses.ambulanceLicense
+        );
+        this.ambulanceLicense = ambulanceLicenseDate.format('LL');
+
+        if (this.ambulanceLicense === 'Invalid date') {
+          this.noAmbulanceLicense = false;
+        }
+      } else {
         this.noAmbulanceLicense = false;
       }
 
-      this.changeColorAdvice(today, carLicenseDate, ambulanceLicenseDate);
+      this.changeColorAdvice(
+        today,
+        moment(userData.datesLicenses.driverLicense),
+        moment(userData.datesLicenses.ambulanceLicense)
+      );
       this.driveLicenseAlmostExpired = true;
       this.instructions = 'Was machen?';
     }
@@ -245,7 +261,7 @@ export class HomeComponent implements OnInit {
     } else {
       this.currentGreeting = this.greeting[2];
     }
-    this.name = this.sharedService.getUserLocalStorage().name;
+    this.name = this.sharedService.getUserLocalStorage().privateDaten.name;
   }
 
   /**
