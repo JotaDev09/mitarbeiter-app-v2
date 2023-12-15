@@ -117,21 +117,14 @@ export class ProfilComponent implements OnInit {
   getInfoFromUser() {
     try {
       const userData = localStorage.getItem('user');
-      console.log('UserData from Local Storage:', userData);
 
       if (userData) {
-        // Parseamos los datos y aseguramos que datesLicenses está definido
         const parsedData = JSON.parse(userData) as User;
         parsedData.datesLicenses = parsedData.datesLicenses || {};
         parsedData.datesLicenses.driverLicense =
           parsedData.datesLicenses.driverLicense || '';
-        console.log('Driver License:', parsedData.datesLicenses.driverLicense);
         parsedData.datesLicenses.ambulanceLicense =
           parsedData.datesLicenses.ambulanceLicense || '';
-        console.log(
-          'Ambulance License:',
-          parsedData.datesLicenses.ambulanceLicense
-        );
 
         this.user = [parsedData];
       }

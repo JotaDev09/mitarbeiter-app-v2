@@ -218,6 +218,9 @@ export class SharedService {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
+  /**
+   * The function savePrivateDatenLS() is a function that saves the private daten in the local storage
+   */
   savePrivateDatenLS(privateDatenData: any) {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     user.privateDaten = privateDatenData;
