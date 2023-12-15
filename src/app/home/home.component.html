@@ -35,7 +35,7 @@
           [ngClass]="{'expiration-one-month': isCarLicenseExpirationOneMonth, 'expiration-three-months': isCarLicenseExpirationThreeMonths}">
           <a>Führerschein Ablaufsdatum</a>
           <div class="datum-license">
-            <span>{{ambulanceLicense}}</span>
+            <span>{{driverLicense}}</span>
             <div *ngIf="driveLicenseAlmostExpired" class="help-renovate" (click)="instructionsRenovate()">
               <mat-icon>help</mat-icon>
               <a>{{instructions}}</a>

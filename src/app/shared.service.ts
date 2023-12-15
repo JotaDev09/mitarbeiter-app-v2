@@ -93,6 +93,7 @@ export class SharedService {
       'bankOwner',
       'bankNumber',
       'bankBic',
+      'reparatur',
     ];
 
     propertiesToUpdate.forEach((property) => {

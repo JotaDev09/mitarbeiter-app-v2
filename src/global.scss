@@ -288,9 +288,23 @@ body {
   border-radius: 10px;
   text-align: center;
 }
+
 @media (width < 1500px) {
   .logo-cont {
     height: 160px;
     top: 40px;
+  }
+
+  .form-container {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .info-notizen {
+    height: 140px;
+  }
+
+  .self {
+    margin-top: 0px;
   }
 }

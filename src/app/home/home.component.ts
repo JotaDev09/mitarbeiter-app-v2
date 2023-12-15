@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   today = this.formatDate(new Date());
   tomorrow = this.formatDate(this.getTomorrow());
   userData = this.sharedService.getUserLocalStorage();
-  carLicense = '';
+  driverLicense = '';
   ambulanceLicense = '';
   noCarLicense: boolean = true;
   noAmbulanceLicense: boolean = true;
@@ -183,8 +183,8 @@ export class HomeComponent implements OnInit {
       const carLicenseDate = moment(userData.driverLicense);
       const ambulanceLicenseDate = moment(userData.ambulanceLicense);
 
-      this.carLicense = carLicenseDate.format('LL');
-      if (this.carLicense === 'Invalid date') {
+      this.driverLicense = carLicenseDate.format('LL');
+      if (this.driverLicense === 'Invalid date') {
         this.noCarLicense = false;
       }
 
