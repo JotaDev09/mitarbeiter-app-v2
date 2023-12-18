@@ -33,8 +33,10 @@
 .main-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   width: 100%;
+  overflow-y: auto;
+  max-height: 100vh;
+  margin: 1rem;
 }
 
 .container {
@@ -213,11 +215,13 @@ a {
     gap: 0;
   }
 
+  .main-container {
+    max-height: 600px;
+  }
+
   .container-head {
-    display: flex;
-    flex-direction: initial;
-    margin: 1rem;
-    gap: 50px;
+    flex-direction: row !important;
+    gap: 50px !important;
   }
 
   .wrapper-calendar {

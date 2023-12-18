@@ -30,12 +30,18 @@ body {
   height: -webkit-fill-available;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   span {
     color: #3c8f69;
     font-size: 18px;
     font-family: "Poppins";
   }
+}
+
+.no-menu {
+  justify-content: space-between !important;
 }
 
 .menu-list {
@@ -143,7 +149,7 @@ body {
   width: -webkit-fill-available;
   height: fit-content;
   background-color: white;
-  margin: 1rem;
+  margin: 2rem;
 }
 
 .info-container {
@@ -224,7 +230,6 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 10px;
   font-size: 18px;
   padding: 10px;
   border-radius: 10px;
@@ -301,7 +306,7 @@ body {
   }
 
   .info-notizen {
-    height: 140px;
+    height: 130px;
   }
 
   .self {

@@ -1,4 +1,4 @@
-<section class="toolbar">
+<section class="toolbar no-menu">
   <div class="logo-cont">
     <img src="/assets/img/gorris_logo.png" alt="">
   </div>
@@ -12,10 +12,12 @@
   <div class="container-head">
     <span class="pageTitle">Impressum</span>
   </div>
-  <div class="impressum-contain" *ngFor="let contain of impressumContain; let i = index">
-    <h3>{{contain.impressumContTitle}}</h3>
-    <span>{{contain.impressumContText}}</span>
-    <span *ngIf="contain.impressumContText2">{{contain.impressumContText2}}</span>
+  <div class="impressum-resum-contain">
+    <div class="impressum-contain" *ngFor="let contain of impressumContain; let i = index">
+      <h3>{{contain.impressumContTitle}}</h3>
+      <span>{{contain.impressumContText}}</span>
+      <span *ngIf="contain.impressumContText2">{{contain.impressumContText2}}</span>
+    </div>
   </div>
 </section>
 

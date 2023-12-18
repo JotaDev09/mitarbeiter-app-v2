@@ -61,7 +61,7 @@
 }
 
 .infoNextYear {
-  margin: 1rem;
+  margin-left: 2rem;
   span {
     font-size: 18px;
 
@@ -150,10 +150,10 @@
   }
 
   .info-container {
-    gap: 10px;
+    gap: 15px !important;
   }
 
   .attention {
-    gap: 5px;
+    gap: 0px;
   }
 }

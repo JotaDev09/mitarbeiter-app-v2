@@ -26,9 +26,9 @@
         <mat-label>Datumsbereich auswählen</mat-label>
         <mat-date-range-input [rangePicker]="rangePicker" [min]="optHolidays" [max]="maxOptionHolidays">
           <input matStartDate placeholder="Startdatum" [(ngModel)]="holidaysFrom" name="holidaysFrom"
-            (change)="calculateRemainingHolidays()" [disabled]="stillHolidays === 0">
+            (change)="calculateRemainingHolidays()" [disabled]="stillHolidays === 0" required>
           <input matEndDate placeholder="Enddatum" [(ngModel)]="holidaysTo" name="holidaysTo"
-            (change)="calculateRemainingHolidays()" [disabled]="stillHolidays === 0">
+            (change)="calculateRemainingHolidays()" [disabled]="stillHolidays === 0" required>
         </mat-date-range-input>
 
         <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>

@@ -15,10 +15,12 @@
   width: -webkit-fill-available;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   width: 80%;
-  margin: 1rem;
+  margin: 2rem;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 .holidays-year {
@@ -198,7 +200,7 @@
   border-radius: 10px;
   gap: 15px;
   background-color: white;
-  margin: 1rem;
+  margin-left: 2rem;
 }
 
 .legend {
@@ -212,6 +214,9 @@
 }
 
 @media (width < 1500px) {
+  .holidaysInYear {
+    max-height: 515px;
+  }
   .holidays-resum {
     gap: 0;
   }

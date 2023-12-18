@@ -11,14 +11,20 @@
   margin-left: 250px;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 100px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins";
+  background-color: #f0f9f4;
+}
+
+.privacy-resum-contain {
+  max-height: 600px;
   display: flex;
   flex-direction: column;
   text-align: justify;
   text-align: justify;
-  font-family: "Poppins";
-  overflow: scroll;
-  background-color: #f0f9f4;
+  overflow-y: auto;
 }
 
 .privacy-intro {

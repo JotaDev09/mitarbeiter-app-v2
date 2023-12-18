@@ -16,8 +16,9 @@ export class HolidaysRequestComponent implements OnInit {
   nextYear = this.sharedService.year + 1;
   currentMonth = new Date().getMonth() + 1;
   showNextYearOption: boolean = false;
-  name: string = this.sharedService.getUserLocalStorage().name;
-  lastname: string = this.sharedService.getUserLocalStorage().lastname;
+  name: string = this.sharedService.getUserLocalStorage().privateDaten.name;
+  lastname: string =
+    this.sharedService.getUserLocalStorage().privateDaten.lastname;
   optHolidays: string = '';
   maxOptionHolidays: string = '';
   actualYear = this.sharedService.year;
@@ -129,7 +130,7 @@ export class HolidaysRequestComponent implements OnInit {
       }, 300);
       setTimeout(() => {
         this.floatContainer = false;
-        this.router.navigate(['/holidays-resum']);
+        this.router.navigate(['/urlaubsuebersicht']);
         this.holidaysFrom = '';
         this.holidaysTo = '';
         this.notes = '';
