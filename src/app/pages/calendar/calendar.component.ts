@@ -2,8 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { SharedService } from 'src/app/shared.service';
-import * as moment from 'moment';
 import { HttpClient } from '@angular/common/http';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-calendar',
@@ -15,7 +15,9 @@ export class CalendarComponent implements OnInit {
   holidaysData: any[] = [];
   eventsData: any[] = [];
 
-  constructor(private sharedService: SharedService, private http: HttpClient) {}
+  constructor(private sharedService: SharedService, private http: HttpClient) {
+    this.sharedService.updateTitle('Kalender');
+  }
 
   ngOnInit() {
     this.loadHolidaysData();
@@ -75,9 +77,8 @@ export class CalendarComponent implements OnInit {
             .filter((event: any) => event !== null)
         );
       }
+      this.initializeCalendar();
     }
-
-    this.initializeCalendar();
   }
 
   /**
@@ -89,8 +90,8 @@ export class CalendarComponent implements OnInit {
   requested(holidays: any, endDate: Date) {
     return {
       title: 'Urlaub beantragt',
-      start: moment(holidays.holidaysFrom).format('YYYY-MM-DD'),
-      end: moment(endDate).format('YYYY-MM-DD'),
+      start: format(holidays.holidaysFrom, 'yyyy-MM-dd'),
+      end: format(endDate, 'yyyy-MM-dd'),
       display: 'background',
       backgroundColor: '#eef011',
       color: '#3c8f69',
@@ -107,7 +108,7 @@ export class CalendarComponent implements OnInit {
     return {
       title: 'Urlaub genehmigt',
       start: holidays.holidaysFrom,
-      end: moment(endDate).format('YYYY-MM-DD'),
+      end: format(endDate, 'yyyy-MM-dd'),
       display: 'background',
       backgroundColor: '#3c8f69',
       color: '#eef011',
@@ -124,12 +125,12 @@ export class CalendarComponent implements OnInit {
     return {
       title: 'Urlaub storniert',
       start: holidays.holidaysFrom,
-      end: moment(endDate).format('YYYY-MM-DD'),
+      end: format(endDate, 'yyyy-MM-dd'),
       display: 'background',
       backgroundColor: '#f44336',
+      color: '#eef011',
     };
   }
-
   /**
    * The function initializeCalendar() is a function that initialize the calendar with the events
    */
